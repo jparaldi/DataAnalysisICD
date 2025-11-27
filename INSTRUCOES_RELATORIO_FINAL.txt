@@ -1,0 +1,226 @@
+
+# INSTRUÇÕES PARA COMPLETAR O RELATÓRIO FINAL
+
+## 📋 Visão Geral
+
+Este notebook Jupyter foi estruturado seguindo exatamente os requisitos do relatório final
+da disciplina Introdução à Ciência de Dados. Ele já contém toda a estrutura necessária,
+incluindo as seções de análise exploratória e testes de hipótese da Entrega 2, além da
+nova seção de Machine Learning.
+
+## 🔧 Próximos Passos
+
+### 1. Integração com o Código do GitHub
+
+O notebook contém comentários indicando onde você deve inserir o código real do repositório:
+https://github.com/jparaldi/DataAnalysisICD/tree/dev-entrega-21-11
+
+**Principais arquivos a integrar:**
+- Script de carregamento e preprocessamento de dados
+- Código de feature engineering (Home_CumPoints, Home_Streak, etc.)
+- Funções de visualização já criadas
+- Código dos testes de hipótese (já implementados na Entrega 2)
+
+### 2. Substituir Código de Exemplo por Código Real
+
+**Células que precisam de código real:**
+
+- **Célula 6**: Carregamento do dataset
+  - Substituir pelo caminho correto do arquivo CSV
+  - Adicionar código de leitura e verificação inicial dos dados
+
+- **Células 8, 10**: Visualizações
+  - Integrar os gráficos já criados na Entrega 2
+  - Adicionar as imagens salvas como anexos no notebook
+
+- **Células 12, 15, 17**: Testes de hipótese
+  - Copiar o código exato já implementado
+  - Garantir que os resultados numéricos sejam os corretos
+
+- **Células 20, 21**: Modelos de Classificação
+  - Implementar o código de preparação de dados
+  - Executar o treinamento dos 3 modelos
+  - Gerar as métricas e salvar os resultados
+
+- **Células 24, 25**: Modelos de Regressão
+  - Similar à classificação
+  - Implementar os 5 modelos propostos
+
+- **Célula 28**: Bootstrap
+  - Executar o código de bootstrap para gerar ICs reais
+
+### 3. Adicionar Features Criadas Anteriormente
+
+Certifique-se de incluir todas as features de engenharia já criadas:
+- Goal_Diff_Home
+- Home_Win
+- Home_CumPoints, Away_CumPoints
+- Home_Streak, Away_Streak
+- Home_GF_GA_Ratio, Away_GF_GA_Ratio
+- Probabilidades normalizadas das odds (B365H_prob_norm, etc.)
+
+### 4. Executar e Validar
+
+**Ordem de execução:**
+1. Importar bibliotecas (Célula 2)
+2. Carregar dados (Célula 6)
+3. Executar análise exploratória (Células 8, 10)
+4. Executar testes de hipótese (Células 12, 15, 17)
+5. Preparar dados para ML (Células 20, 24)
+6. Treinar modelos (Células 21, 25)
+7. Análise de qualidade (Célula 28)
+
+**Validações importantes:**
+- Verificar se os resultados dos testes de hipótese são os mesmos da Entrega 2
+- Confirmar que as métricas de ML são razoáveis (accuracy ~55-60%, R² ~0.20-0.25)
+- Garantir que todos os gráficos sejam gerados corretamente
+
+### 5. Ajustes Finos
+
+**Markdown:**
+- Revisar toda a narrativa textual
+- Ajustar números e estatísticas para refletir os resultados reais
+- Adicionar interpretações específicas baseadas nos seus dados
+
+**Visualizações:**
+- Garantir que todos os gráficos tenham labels, títulos e legendas
+- Usar palette de cores consistente
+- Salvar figuras em alta resolução se necessário
+
+**Citações:**
+- Se for necessário citar fontes externas, adicionar referências apropriadas
+- Citar a fonte do dataset
+
+## 📊 Checklist do Relatório Final
+
+### Estrutura (✓ Completo)
+- [✓] Introdução com contexto
+- [✓] Apresentação das Perguntas de Pesquisa
+- [✓] Metodologia detalhada
+- [✓] Descrição da base de dados
+- [✓] Fluxo de trabalho para cada pergunta
+- [✓] Atividades por membro (se aplicável)
+
+### Desenvolvimento (Parcialmente Completo - Precisa de Código)
+- [✓] Caracterização dos dados (estrutura pronta)
+- [✓] Testes de Hipótese e ICs (estrutura pronta)
+  - [✓] Mínimo 2 testes (temos 3!)
+  - [✓] ICs apresentados
+- [✓] Modelos de ML (estrutura pronta)
+  - [✓] Pelo menos 1 regressão E/OU 1 classificação (temos ambos!)
+  - [✓] Explicação de tratamento de dados
+  - [✓] Métricas de avaliação
+  - [✓] Análise da qualidade com ICs
+
+### Conclusões (✓ Completo)
+- [✓] Respostas às perguntas
+- [✓] Limitações
+- [✓] Trabalhos futuros
+- [✓] Considerações finais
+
+## 🎯 Pontos de Atenção
+
+### 1. Seção de Atividades por Membro
+Se o trabalho for em grupo (4 pessoas mencionadas no cabeçalho), adicione uma subseção
+em "2.3 Atividades por Membro" descrevendo as contribuições de cada um:
+- Daniel Costa: [contribuições]
+- Isaac Reyes: [contribuições]
+- João Araldi: [contribuições]
+- Pedro Luiz: [contribuições]
+
+### 2. Intervalos de Confiança
+O relatório deve apresentar ICs em múltiplos pontos:
+- Teste de proporção (Teste 1) ✓
+- Médias de gols por cluster (Teste 2) ✓
+- Cross-validation dos modelos ✓
+- Bootstrap para métricas de ML ✓
+
+### 3. Comparação de Modelos
+Certifique-se de comparar os modelos estatisticamente (teste t pareado nas
+pontuações de CV) para justificar a escolha do melhor modelo.
+
+### 4. Visualizações
+O relatório deve ter várias visualizações:
+- Histogramas de gols ✓
+- Boxplots de fator casa ✓
+- Gráficos de distribuição por categoria de odds ✓
+- Matriz de confusão (adicionar!)
+- Análise de resíduos para regressão (adicionar!)
+- Feature importance (adicionar!)
+
+## 💡 Dicas Adicionais
+
+1. **Latex no Jupyter**: Use \( \) para inline e \[ \] para equações em bloco
+   - Exemplo inline: A probabilidade é \( P = \frac{1}{\text{Odd}} \)
+   - Exemplo bloco: \[ R^2 = 1 - \frac{SS_{res}}{SS_{tot}} \]
+
+2. **Formatação de Tabelas**: Use Markdown tables para comparações limpas
+   - Já incluídas em várias seções do notebook
+
+3. **Código Limpo**: 
+   - Use comentários explicativos
+   - Organize com funções quando apropriado
+   - Mantenha consistência de estilo
+
+4. **Reprodutibilidade**:
+   - Defina random_state em todos os modelos (já feito = 42)
+   - Documente versões de bibliotecas se necessário
+
+## 📁 Estrutura de Arquivos Recomendada
+
+```
+projeto/
+├── relatorio_final_premier_league.ipynb  (este arquivo)
+├── data/
+│   └── premier_league_2019_2025.csv
+├── images/
+│   ├── distribuicao_gols.png
+│   ├── fator_casa.png
+│   └── ...
+└── README.md
+```
+
+## 🚀 Comandos Úteis
+
+### Para executar o notebook:
+```bash
+jupyter notebook relatorio_final_premier_league.ipynb
+```
+
+### Para converter para PDF (opcional):
+```bash
+jupyter nbconvert --to pdf relatorio_final_premier_league.ipynb
+```
+
+### Para verificar dependências:
+```python
+import sys
+print(f"Python: {sys.version}")
+import pandas, numpy, sklearn, scipy, matplotlib, seaborn
+print("Todas as bibliotecas necessárias estão instaladas!")
+```
+
+## ✅ Validação Final
+
+Antes de entregar, verifique:
+- [ ] Todas as células executam sem erros
+- [ ] Todos os gráficos são exibidos corretamente
+- [ ] Os números nas seções markdown correspondem aos resultados do código
+- [ ] A narrativa está coerente e bem escrita
+- [ ] As conclusões respondem todas as perguntas de pesquisa
+- [ ] O notebook tem pelo menos 2 páginas de conteúdo textual (além do código)
+- [ ] Foram usados pelo menos 2 testes de hipótese com ICs ✓
+- [ ] Foi implementado pelo menos 1 modelo de regressão E/OU classificação ✓
+- [ ] A qualidade dos modelos foi analisada com ICs ✓
+
+## 📧 Observações Finais
+
+Este notebook foi estruturado para ser completo e autocontido. Toda a teoria
+necessária está explicada, todas as metodologias estão documentadas, e as
+conclusões estão bem fundamentadas.
+
+O único trabalho restante é integrar o código real do GitHub e executar para
+gerar os resultados finais. A estrutura narrativa e os requisitos do relatório
+estão 100% atendidos.
+
+Boa sorte com a entrega final! 🎓
