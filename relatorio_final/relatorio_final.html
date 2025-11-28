@@ -8319,12 +8319,13 @@ Depois de calcular sua acurácia, podemos compará-lo tanto com o baseline aleat
 <li><strong>D</strong>: Empate (Draw)</li>
 <li><strong>A</strong>: Vitória do visitante (Away)</li>
 </ul>
-<h5 id="3.3.3.1-Tratamento-dos-Dados-de-Entrada"><strong>3.3.3.1 Tratamento dos Dados de Entrada</strong><a class="anchor-link" href="#3.3.3.1-Tratamento-dos-Dados-de-Entrada">¶</a></h5><p><strong>Feature Engineering:</strong></p>
+<h5 id="3.3.3.1-Tratamento-dos-Dados-de-Entrada"><strong>3.3.3.1 Tratamento dos Dados de Entrada</strong><a class="anchor-link" href="#3.3.3.1-Tratamento-dos-Dados-de-Entrada">¶</a></h5><p><strong>Features Utilizadas</strong></p>
+<p>O modelo utiliza principalmente informações de mercado, como odds e suas probabilidades implícitas, combinadas com estatísticas de momentum dos times, incluindo desempenho recente, pontos acumulados e métricas de gols dos últimos jogos. Também incorporamos sinais agregados do mercado, como Over/Under e Asian Handicap. Não usamos estatísticas de jogo em tempo real, pois elas não estão disponíveis antes da partida e não seriam adequadas para um modelo preditivo pré-jogo.</p>
+<p><strong>Feature Engineering:</strong></p>
 <ol>
 <li><p><strong>Variáveis Criadas:</strong></p>
 <ul>
 <li><code>Goal_Diff_Home</code>: Diferença de gols (FTHG - FTAG)</li>
-<li><code>Home_Win</code>: Variável binária (1 se FTR == 'H', 0 caso contrário)</li>
 <li><code>Home_CumPoints</code>, <code>Away_CumPoints</code>: Pontos acumulados ao longo da temporada</li>
 <li><code>Home_Streak</code>, <code>Away_Streak</code>: Sequência de vitórias/derrotas recentes (momentum)</li>
 <li><code>Home_GF_GA_Ratio</code>, <code>Away_GF_GA_Ratio</code>: Razão gols marcados/sofridos</li>
@@ -8335,12 +8336,6 @@ Depois de calcular sua acurácia, podemos compará-lo tanto com o baseline aleat
 <li>Conversão de odds em probabilidades: $$ P = \frac{1}{\text{Odd}} $$</li>
 <li>Normalização: $$ P_{\text{norm}} = \frac{P}{P_H + P_D + P_A} $$</li>
 <li>Features: <code>B365H_prob_norm</code>, <code>B365D_prob_norm</code>, <code>B365A_prob_norm</code></li>
-</ul>
-</li>
-<li><p><strong>Features Estatísticas:</strong></p>
-<ul>
-<li>Médias móveis de chutes, chutes no alvo, escanteios, faltas</li>
-<li>Cartões acumulados (disciplina)</li>
 </ul>
 </li>
 <li><p><strong>Encoding e Padronização:</strong></p>
