@@ -1,1 +1,0 @@
-Bem vindo a branch dev, ela serve pra gente se organizar melhor. Cada vez que a gente for criar uma branch a gente cria a partir dessa, com o nome "dev-minha-branch"
